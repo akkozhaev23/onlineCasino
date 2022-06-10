@@ -6,22 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <h1>Welcome to the Zhasik casino</h1>
-    <h3>Choose a number between 1 and 5</h3>
-    <input class="input" type="text" placeholder="Enter a number">
-    <button type="button" class="btn">Play</button>
+    <div class="container-fluid d-flex justify-content-center">
+        <div class="card" style="width: 40rem; margin-top: 12rem">
+            <div class="card-header">
+                <h1>Welcome to the Zhasik casino</h1>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <h4>Choose a number between 1 and 5</h4>
+                    <div class="col-6">
+                        <input class="input form-control userNumber" type="text" placeholder="Enter a number">
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-success">
+                            Play
+                        </button>
+                    </div>
+                    <h3>Result</h3>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
 
 
-
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
