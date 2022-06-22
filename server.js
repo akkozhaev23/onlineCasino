@@ -1,20 +1,25 @@
 const randomizer = require('./randomizer')
 const express = require('express')
+const res = require('express/lib/response')
 
 const app = new express()
 
 app.use(express.json())
 
+const responseObj = {}
+
+app.post('/name', (req, res) => {
+    responseObj.name = req.body.name
+})
+
 app.post('/user', (request, response) => {
     let randomNumber = randomizer()
     if(+request.body.userNumber === randomNumber) {
-        console.log(`User number: ${request.body.userNumber}, random number: ${randomNumber}
-        you won`)
+        responseObj.message = `${responseObj.name}, you win!`
     } else {
-        console.log(`User number: ${request.body.userNumber}, random number: ${randomNumber}
-        you lost`)
+        responseObj.message = `${responseObj.name}, you lost!`
     }
-    console.log(request.body.userNumber)
+    response.send(JSON.stringify(responseObj))
 })
 
 app.use(express.static('static')).listen(9999, () => {
