@@ -6,7 +6,9 @@ const app = new express()
 
 app.use(express.json())
 
-const responseObj = {}
+const responseObj = {
+    money: 5000
+}
 
 app.post('/name', (req, res) => {
     responseObj.name = req.body.name
