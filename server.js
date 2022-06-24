@@ -8,7 +8,7 @@ const app = new express()
 app.use(express.json())
 
 const responseObj = {
-    money: 1000
+    money: 5000
 }
 
 app.post('/name', (req, res) => {
